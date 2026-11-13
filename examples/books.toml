@@ -1,0 +1,14 @@
+# Ejemplo real: books.toscrape.com es una web de práctica creada para aprender scraping.
+# Saca el título, el precio, la disponibilidad y el enlace de cada libro.
+urls = [
+  "https://books.toscrape.com/",
+  "https://books.toscrape.com/catalogue/page-2.html",
+]
+item_selector = "article.product_pod"   # un libro por fila
+delay = 1.0                             # segundos entre peticiones
+
+[fields]
+title = { selector = "h3 a", type = "attr", attr = "title" }
+price = { selector = "p.price_color", type = "price" }
+availability = "p.availability"
+url = { selector = "h3 a", type = "link" }

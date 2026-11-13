@@ -1,0 +1,14 @@
+# Plantilla para tu propia web: cambia las URLs y los selectores CSS.
+urls = [
+  "https://example.com/catalogo?page=1",
+  "https://example.com/catalogo?page=2",
+]
+item_selector = ".product"   # una fila por cada elemento que coincida
+delay = 1.5                  # segundos entre peticiones
+
+[fields]
+title = "h2.name"
+price = { selector = ".price", type = "price" }
+stock = { selector = ".stock", type = "int" }
+url = { selector = "a", type = "link" }
+image = { selector = "img", type = "attr", attr = "src" }
